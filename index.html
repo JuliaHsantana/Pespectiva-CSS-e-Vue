@@ -1,0 +1,46 @@
+<!DOCTYPE>
+<html>
+
+<head>
+  <title>Perpectiva Playground CSS </title>
+  <link rel="stylesheet" type="text/css" href="main.css" />
+</head>
+
+<body>
+  <div id="app">
+    <h2>Brincando com a Pespectiva CSS</h2>
+    <main>
+      <section class="settings">
+        <div class="settings-container">
+          <label>Perpectiva: {{ perspective }}px;</label>
+          <input type="range" min="0" max="999" v-model="perspective" />
+
+          <label>Eixo X: {{ rotateX }}deg; </label>
+          <input type="range" min="-180" max="180" v-model="rotateX" />
+
+          <label>Eixo Y: {{ rotateY }}deg; </label>
+          <input type="range" min="-180" max="180" v-model="rotateY" />
+
+          <label>Eixo Z: {{ rotateZ }}deg; </label>
+          <input type="range" min="-180" max="180" v-model="rotateZ" />
+
+          <button type="button" @click.prevent="reset">Reset</button>
+          <button type="button" @click.prevent="copy">Copiar</button>
+        </div>
+      </section>
+      <section class="output">
+        <div class="box-container">
+          <div class="box" :style="box"></div>
+        </div>
+      </section>
+    </main>
+
+  </div>
+
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="app.js"></script>
+
+</body>
+
+</html>
